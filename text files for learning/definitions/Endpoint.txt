@@ -1,0 +1,11 @@
+ Endpoint
+ Definition: An endpoint is the URL pattern (route) at which a web application can be accessed.
+ Purpose: It defines where clients (browsers or other applications) can interact with the web server to perform specific actions or retrieve information.
+ Responsibilities:
+ Identifies the location and functionality of a resource within the application.
+ Can be associated with multiple HTTP methods (GET, POST, PUT, DELETE, etc.) to handle different types of requests.
+ Example:
+ /profile/<username> is an endpoint that serves the profile page for a specific user.
+ Relationship
+ Correlation: Each view function is associated with one or more endpoints/routes. When a client makes an HTTP request to an endpoint, Flask routes the request to the corresponding view function, which generates a response.
+ Usage: Developers define view functions to handle specific endpoints/routes within their application. These endpoints serve as the interface through which clients interact with the application's functionality (e.g., displaying web pages, processing form submissions, serving API data).

@@ -1,10 +1,41 @@
-{% extends "base.html"%}
+<!-- this is the html for the page -->
 
+
+<!-- This line indicates that the index.html template inherits from the base
+html template. It means that all the structure and content defined in 
+base.html will be included in index.html, and only the specified blocks 
+will be overridden or filled in. -->
+{% extends "base.html"%} 
+
+<!-- This block defines the content that will be inserted into the {% block content %} placeholder in base.html. It is a way to define specific content for this page while keeping the overall layout consistent with other pages that also extend base.html -->
 {% block content %}
+
+
 <h1>Profiles Index</h1>
+<!-- <ul> ... </ul>
+This section creates an unordered list (bulleted list) in HTML. Each profile will be listed as an item within this list. -->
 <ul>
+
+    <!-- This is a for loop in the template language (e.g., Jinja2 for Flask or Django templates). It iterates over the profiles list provided by the view function. For each iteration, the variable profile represents the current profile object in the list. -->
     {% for profile in profiles %}
+
+    <!-- Within the for loop, this line creates a list item (<li>) for each profile. It uses double curly braces ({{ }}) to output the last_name and first_name of the current profile object. This is how the template language inserts dynamic data into the HTML. -->
         <li>{{ profile["last_name"] }} {{profile["first_name"] }}</li>
     {% endfor %}   
 </ul>
 {%endblock %}
+
+
+<!-- How It Works Together
+View Function:
+The server-side view function (in Flask or Django) retrieves a list of profiles from the database or other data source.
+This list is passed to the template as the profiles context variable.
+
+Base Template (base.html):
+Defines the overall structure and layout of the page, including any common elements like headers, footers, and navigation bars.
+Contains a {% block content %} placeholder where the specific content of each page will be inserted.
+
+Page Template (index.html):
+Extends the base template to inherit its structure.
+Fills in the {% block content %} with the specific content for the Profiles Index page.
+The for loop iterates over the profiles list, generating a list item for each profile and inserting the profile's last name and first name. -->

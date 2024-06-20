@@ -1,0 +1,7 @@
+View Function
+Definition: A view function is a Python function that responds to a particular URL pattern.
+Purpose: It generates the HTTP response to be sent back to the client (browser) when a specific URL is requested.
+Responsibilities:
+Renders HTML templates using render_template.
+Returns JSON responses for API endpoints.
+ andles user input through request parameters, form data, or JSON payloads.

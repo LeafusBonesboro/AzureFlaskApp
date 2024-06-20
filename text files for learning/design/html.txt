@@ -1,0 +1,13 @@
+<!-- How It Works Together
+View Function:
+The server-side view function (in Flask or Django) retrieves a list of profiles from the database or other data source.
+This list is passed to the template as the profiles context variable.
+
+Base Template (base.html):
+Defines the overall structure and layout of the page, including any common elements like headers, footers, and navigation bars.
+Contains a {% block content %} placeholder where the specific content of each page will be inserted.
+
+Page Template (index.html):
+Extends the base template to inherit its structure.
+Fills in the {% block content %} with the specific content for the Profiles Index page.
+The for loop iterates over the profiles list, generating a list item for each profile and inserting the profile's last name and first name. -->
