@@ -1,11 +1,13 @@
 from flask import Flask, render_template
 from flask_restful import Api
+from flask_cors import CORS
 
 from .profiles import profiles_blueprint
 from .api.profile import ProfileResource
 
 # Application and Api initialization
 app = Flask(__name__)
+CORS(app)
 api = Api(app, prefix="/api")
 
 # register blueprint
