@@ -6,7 +6,7 @@ from .profiles import profiles_blueprint
 from .api.profile import ProfileResource
 
 # Application and Api initialization
-app = Flask(__name__)
+app = Flask(__name__, static_folder='frontend/build', static_url_path='')
 CORS(app)
 api = Api(app, prefix="/api")
 
@@ -22,7 +22,7 @@ api.add_resource(ProfileResource, "/profiles")
 # In Flask, decorators are used to register a view function to handle HTTP requests to a specific URL pattern (endpoint)
 @app.route("/")
 def index():
-    return render_template("index.html")
+    return app.send_static_file("index.html")
 
 
 
